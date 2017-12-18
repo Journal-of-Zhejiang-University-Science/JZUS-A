@@ -1,0 +1,15 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: sample.aux
+The style file: jzus-a.bst
+Database file #1: sample.bib
+Warning--I didn't find a database entry for "Gregersen06"
+Warning--empty YEAR in ISO82
+Warning--empty DOI in Kampf02
+You can't pop an empty literal stack for entry Prigogine76
+while executing---line 1029 of file jzus-a.bst
+Warning--empty DOI in Prigogine76
+You can't pop an empty literal stack for entry misc10
+while executing---line 1029 of file jzus-a.bst
+Warning--empty DOI in Rizvi06
+You can't pop an empty literal stack for entry Sheffield01
+while executing---line 1029 of file jzus-a.bst
+(There were 3 error messages)

@@ -3,27 +3,36 @@
 ## Honorary Editor-in-Chief
 **Wei YANG**     Mechanics      
 National Natural Science Foundation of China
-Editors-in-Chief
+
+## Editors-in-Chief
 **Hua-yong YANG**     Fluid power & mechatronics      
 College of Mechanical Engineering, Zhejiang University (ZJU), yhy@zju.edu.cn
+
 **Yun-min CHEN**     Civil engineering      
 College of Civil Engineering & Architecture, ZJU, chenyunmin@zju.edu.cn
 
 ## Associate Editors-in-Chief
 **Wei-qiu CHEN**     Solid mechanics      
 Department of Engineering Mechanics, ZJU, chenwq@zju.edu.cn
+
 **Kun YANG**     Environmental science      
 Department of Environmental Science, ZJU, kyang@zju.edu.cn
+
 **Bing-cai PAN**     Environmental engineering      
 School of Environment, Nanjing University, bcpan@nju.edu.cn
+
 **Jian-hua YAN**     Thermal power engineering      
 College of Mechanical Engineering, ZJU, yanjh@zju.edu.cn
+
 **Yuan-qiang CAI**     Geotechnical engineering      
 Zhejiang University of Technology, caiyq@zju.edu.cn
+
 **Charles W. W. NG**     Geotechnical engineering      
 Department of Civil and Environmental Engineering, The Hong Kong University of Science and Technology, cecwwng@ust.hk
+
 **You-tong FANG**     Electrical engineering      
 College of Electrical Engineering, ZJU,  youtong@zju.edu.cn
+
 **Dong-ming LU**            
 Zhejiang University Press
 

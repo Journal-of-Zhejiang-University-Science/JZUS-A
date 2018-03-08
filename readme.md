@@ -194,6 +194,8 @@ College of Environmental and Resource Sciences, ZJU, lzzhu@mail.hz.zj.cn
 **Wei-qiu ZHU**     Mechanics      
 Department of Engineering Mechanics, ZJU, wqzhu@zju.edu.cn
 
+--- 
+
 Journal of Zhejiang University-SCIENCE, 38 Zheda Road, Hangzhou 310027, China
 
 Tel: +86-571-87952276; Fax: +86-571-87952331; E-mail: jzus@zju.edu.cn 

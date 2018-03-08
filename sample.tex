@@ -1,89 +1,87 @@
+% First release on June 21, 2010
+% Modified on Dec 12, 2017 by XSK
+
 \documentclass[twoside,twocolumn]{article}
 
 \usepackage{jzusa}
-\usepackage{color}
-\usepackage{graphicx}
-\usepackage{stfloats}
-\usepackage{balance}
 
-%% if you want to remove all changes commands in tex file, use "delcmdchanges.bash [-i] [-h] <inputfile> <outputfile>"
-%\usepackage[draft]{changes}		% draft or final
-%\definechangesauthor[name={Xue Shengke}, color=orange]{XSK}
-
-\usepackage[english]{babel}
-
-%\usepackage[hidelinks, breaklinks = true]{hyperref}
-\usepackage[dvips, hidelinks, breaklinks = true]{hyperref}
+\usepackage[colorlinks, breaklinks = true]{hyperref}		% for pdflatex
+%\usepackage[dvips, hidelinks, breaklinks = true]{hyperref}  % for DVI to PDF latex
 \addto{\captionsenglish}{%
-	\renewcommand{\figurename}{Fig.}
+  \renewcommand{\figurename}{Fig.}
 }
 
 \begin{document}
 
-\title{Example of using \emph{JZUS-A} LaTex template}
-\author[$\ddagger$1]{Xin-xin ZHANG}
+%% article title
+\title{Example of using \emph{JZUS-A} \LaTeX{} template \\ second line if necessary}
+
+%% when all authors provide emails, no $\dagger$
+\author[$\dagger$$\ddagger$1]{Xin-xin ZHANG}%
 \author[$\dagger$2]{Xian-liang HU}
-\affil[1]{Editorial Office of Journal of Zhejiang University SCIENCE, Hangzhou 310027, China}
+\affil[1]{Editorial Office of Journal of Zhejiang University-SCIENCE, Hangzhou 310027, China}
 \affil[2]{Department of Mathematics, Zhejiang University, Hangzhou 310027, China}
 
-% for authors, use \authorcr to begin with a new line, e.g., \author[2]{\authorcr Xian-liang HU}
-% for the affiliation, use \authorcr\institutefont\it to begin with a new line, e.g.,
-%\affil[1]{Editorial Office of Journal of Zhejiang University SCIENCE,
-%\authorcr\institutefont\it Hangzhou 310027, China}
+\shortauthor{Zhang and Hu}	% one author: only Zhai; two authors: Zhai and Hu; three authors: Zhai et al.
+
+\authmark{}
 
 %% Only 1 affiliations
 %\author{Wen-fei WANG}
-%\author{Rong XIONG\textsuperscript{$\dagger$}}
+%\author{Rong XIONG$^{\dagger\ddagger}$}
 %\author{Jian CHU}
 %\affil{\it\footnotesize State Key Laboratory of Industrial Control Technology, Institute of Cyber-Systems and Control,
 %	\authorcr\it\footnotesize Zhejiang University, Hangzhou 310027, China}
 
-\authmark{ }
+% for authors, use \authorcr to begin with a new line, e.g., \author[2]{\authorcr Xian-liang HU}
+% for the affiliation, use \authorcr\Affilfont\it to begin with a new line, e.g.,
+%\affil[1]{Editorial Office of Journal of Zhejiang University SCIENCE,
+%\authorcr\Affilfont\it Hangzhou 310027, China}
 
 \corremailA{jzus\_zxx@zju.edu.cn} 
 \corremailB{xlhu@zju.edu.cn}
-\emailmark{ }
-
-%\corremailA{jzus\_zzy@zju.edu.cn}
-%\corremailB{xlhu@zju.edu.cn}
 %\corremailC{abc@zju.edu.cn}
 %\corremailD{ABC@zju.edu.cn}
-%\emailmark{$\dagger$}
+\emailmark{$\dagger$}	% when all authors provide emails, no \dagger
 
-\abstract{This brief sample shows how to use the \emph{Journal of Zhejiang University-SCIENCE A (Applied Physics {\sf \slshape \&} Engineering)} (\emph{JZUS-A} for short) LaTex template, by listing the system requirement \& installation of compilation environments and including comments in the tex file to contain all possible instances that may occur in articles considered to be published in \emph{JZUS-A}, which started in 2005, monthly, co-published by Zhejiang University Press and Springer. We also introduce the aim \& scope, database information, and online submission of \emph{JZUS-A}, and show the different paper formats at the two stages of ``manuscript preparation'' and ``revision \& acceptance''. The logos and homepage of the three sibling journals \emph{JZUS(A/B/C)} are also included.}
-\keywords{Manual; \emph{Journal of Zhejiang University-SCIENCE A (Applied Physics {\sf \slshape \&} Engineering)}; LaTex template }
 
-\shortauthor{Zhang et al.}
+% abbrev. of month: Jan. Feb. Mar. Apr. May June July Aug. Sept. Oct. Nov. Dec.
+\dateinfo{Received mmm.\ dd, 2017;	Revision accepted mmm.\ dd, 2017;    Crosschecked mmm.\ dd, 2018}
 
-\doi{https://doi.org/10.1631/jzus.A1000000}	% ID of the paper, should be accurate
+\abstract{This brief sample shows how to use the \emph{Journal of Zhejiang University-SCIENCE A (Applied Physics {\sf \slshape \&} Engineering)} (\emph{JZUS-A} for short) LaTeX template, by listing the system requirement \& installation of compilation environments and including comments in the tex file to contain all possible instances that may occur in articles considered to be published in \emph{JZUS-A}, which started in 2005, monthly, co-published by Zhejiang University Press and Springer. We also introduce the aim \& scope, database information, and online submission of \emph{JZUS-A}, and show the different paper formats at the two stages of ``manuscript preparation'' and ``revision \& acceptance''. The logos and homepage of the three sibling journals \emph{JZUS(A/B/C)} are also included.}
+
+% separate by semicolons 
+\keywords{Manual; \emph{Journal of Zhejiang University-SCIENCE A (Applied Physics {\sf \slshape \&} Engineering)}; LaTeX template }
+
+
+\doi{10.1631/jzus.A1000000}	% DOI of the paper, should be accurate
 \code{A}
-\clc{TP}
+\clc{TU}
 
-\publishyear{2017}
-\vol{1}
+%\inpress	% uncomment this command if use "in press"
+
+\publishyear{2018}
+\vol{19}
 \issue{1}
 \pagestart{1}
 \pageend{5}
 
 %% when no funding, the following line should be removed, no period at last
-\support{Project (No.~xxxxxxxx) supported by the National Natural Science Foundation of China} 
+\support{Project supported by the National Natural Science Foundation of China (No.~xxxxxxxx)} 
 
 %\conf{A preliminary version of this paper has been presented at ??? Conference, date}
 %\esm{Electronic supplementary materials: The online version of this article (http://dx/doi.org/10.1631/jzus.C1000000) contains supplementary materials, which are available to authorized users}
-\orcid{ORCID: Xin-xin ZHANG, http://orcid.org/xxxx-xxxx-xxxx-xxxx}	% corresponding author, or first author
+\orcid{Xin-xin ZHANG, http://orcid.org/xxxx-xxxx-xxxx-xxxx}	% corresponding author, or first author
 \articleType{}
 %\articleType can be `Science Letters:', `Review:', `Comment:', etc.
 %Leave blank for research article.
 
-% abbrev. of month: Jan. Feb. Mar. Apr. May June July Aug. Sept. Oct. Nov. Dec.
-\dateinfo{Received Xxx. xx, 2016;\ \ Revision accepted Xxx. xx, 2016;\ \ Crosschecked Xxx. xx, 2017}
-
 \maketitle
 
 \section{System requirement \& installation}\label{sec:introduction}
-  This is a brief example of using the \emph{JZUS-A} LaTex template to format the article published in \emph{Journal of Zhejiang University-SCIENCE A (Applied Physics {\sf \slshape \&} Engineering)} (\emph{JZUS-A} for short). This is the preliminary version of jzusa.sty as well as jzus-a.bst as a template. Welcome reports on bugs and suggestions for improvement.
+  This is a brief example of using the \emph{JZUS-A} LaTeX template to format the article published in \emph{Journal of Zhejiang University-SCIENCE A (Applied Physics {\sf \slshape \&} Engineering)} (\emph{JZUS-A} for short). This is the preliminary version of jzusa.sty as well as jzus-a.bst as a template. Welcome reports on bugs and suggestions for improvement.
 
-  This template has been tested under the Windows 2000/XP/Vista/Windows 7 operating system with the newest version MiKTex; it can also work with any previous version of MiKTex, even with MacTeX, teTeX and other LaTex implementations. The most convenient way is to put the files under the same directory as your LaTex source file. For saving processing time, we suggest authors use the default setting. It is highly recommended to download the newest version CTex from http://www.ctex.org
+This template has been tested under the Windows 2000/XP/Vista/Windows 7 operating system with the newest version MiKTex; it can also work with any previous version of MiKTex, even with MacTeX, teTeX and other LaTeX implementations. The most convenient way is to put the files under the same directory as your LaTeX source file. For saving processing time, we suggest authors use the default setting. It is highly recommended to download the newest version CTeX from http://www.ctex.org
 
 \section{Introduction of \emph{JZUS-A}}
 
@@ -129,12 +127,12 @@ There will be an extra charge for those graphics considered for publication in c
 \begin{figure}[!htb]\small
 \centering
 \begin{tabular}{c}
-\includegraphics{pics/jzusalogo.eps}\\
-(a)\\[3mm]
-\includegraphics{pics/jzusblogo.eps}\\
-(b)\\
-\includegraphics{pics/jzusclogo.eps}\\
-(c)\\
+	\includegraphics[scale=0.9]{pics/jzusalogo.eps}\\
+	{\footnotesize\sf (a)} \\
+	\includegraphics[scale=0.9]{pics/jzusblogo.eps}\\
+	{\footnotesize\sf (b)} \\
+	\includegraphics[scale=0.9]{pics/jzusclogo.eps}\\
+	{\footnotesize\sf (c)} \\
 \end{tabular}
 \caption{Logos of (a) \emph{Journal of Zhejiang University-SCIENCE A (Applied Physics {\sf \slshape \&} Engineering)}, (b) \emph{Journal of Zhejiang University-SCIENCE B (Biomedicine {\sf \slshape \&} Biotechnology)}, and (c) \emph{Journal of Zhejiang University-SCIENCE C (Computers {\sf \slshape \&} Electronics)}}
 \label{fig:logo}
@@ -145,30 +143,28 @@ There will be an extra charge for those graphics considered for publication in c
 
 Tables should usually contain three horizontal lines. Do not use vertical lines. Each table must have a brief title that describes its contents. The title should be understandable without reference to the text. Details such as explanatory material, specific entries, and definitions of non-standard abbreviations should be put in table footnotes, not in the title. In setting up tables, authors should keep in mind the area of the Journal's page (16.4 cm $\times$ 22.8 cm) and the column width (8.0 cm) and should make tables\ \ conform\ \ to\ \ the\ \ limitations\ \ of\ \ these\ \ dimensions.
 
-\begin{figure*}[tbh!]
+\begin{figure*}[tbh]
 \centering
-\includegraphics{pics/website.eps}
-\caption{\emph{JZUS(A/B/C)} website, http://www.zju.edu.cn/jzus. When an article is commented by a reader, or cited by an ISI journal or proceeding, an e-mail notification will be sent automatically to the author(s). For each article, statistics such as downloads, clicks, citations, and comments are given in the contents of each issue} \label{fig:website}
+	\includegraphics[scale=1.0]{pics/website.eps}
+	\caption{\emph{JZUS(A/B/C)} website, http://www.zju.edu.cn/jzus. When an article is commented by a reader, or cited by an ISI journal or proceeding, an e-mail notification will be sent automatically to the author(s). For each article, statistics such as downloads, clicks, citations, and comments are given in the contents of each issue} 
+	\label{fig:website}
 \end{figure*}
 
 
 \begin{table*}[thp]\footnotesize
-%\begin{footnotesize}
-\centering \caption{Results for face and eye detection processing
-using a Pentium IV 2.2 GHz
-CPU$^\textbf{*}$}\label{Table:FacesDetected}
-\begin{tabular*}{15cm}{@{\extracolsep{\fill}}lccccccc}
-\toprule[0.75pt]
-Detector & \multicolumn{3}{c}{TD (\%)} & \multicolumn{3}{c}{FD (\%)} & \multicolumn{1}{c}{Processing time} \\
-\cmidrule[0.5pt]{2-4}\cmidrule[0.5pt]{5-7}
-& Faces & Left eye & Right eye & Faces & Left eye & Right eye & (ms) \\
-\midrule[0.5pt]
-Rowley  & 89.27 & 77.51   &  78.18  &  2.16 & 0.80 & 1.00 & 422.4 \\
-Viola-Jones  & 97.69 & 0.00  &  0.00  & 8.25  &  &  & 117.5 \\
-ENCARA2  &  99.92 & 91.83 &  92.48 &  8.07  &  4.04 & 3.33 &45.6\\
-\bottomrule[0.75pt] \multicolumn{8}{l}{\scriptsize {}$^*$ Taken
-from Castrill\'{o}n \emph{et al}. (2007). TD: correct detection
-ratio; FD: false detection ratio}
+\centering
+\caption{Results for face and eye detection processing using a Pentium IV 2.2 GHz CPU$^\textbf{*}$ \citep{Deniz10}} \label{Table:FacesDetected}
+\addtolength{\tabcolsep}{4.8pt}
+\begin{tabular*}{16.4cm}{lcccccccc}
+	\toprule[0.75pt]
+	\multirow{2}{*}{Detector}                  & \multicolumn{3}{c}{TD (\%)}  &  & \multicolumn{3}{c}{FD (\%)}  & \multicolumn{1}{c}{Processing time} \\
+	\cmidrule[0.5pt]{2-4}\cmidrule[0.5pt]{6-8} & Faces & Left eye & Right eye &  & Faces & Left eye & Right eye &                (ms)                 \\ 
+	\midrule[0.5pt]
+	Rowley                                     & 89.27 &  77.51   &   78.18   &  & 2.16  &   0.80   &   1.00    &                422.4                \\
+	Viola-Jones                                & 97.69 &   0.00   &   0.00    &  & 8.25  &          &           &                117.5                \\
+	ENCARA2                                    & 99.92 &  91.83   &   92.48   &  & 8.07  &   4.04   &   3.33    &                45.6                 \\ 
+	\bottomrule[0.75pt]
+	\multicolumn{9}{p{15.6cm}}{\scriptsize $^*$ Taken from Castrill\'{o}n {et al}. (2007). TD: correct detection ratio; FD: false detection ratio}
 \end{tabular*}
 \end{table*}
 
@@ -176,32 +172,53 @@ ratio; FD: false detection ratio}
 All tables must be mentioned in the text in consecutive order and must be numbered with Arabic numbers. Tables should be cited in the text using the following format: Table~1, Tables~1 and 2, or Tables~1--3.
 
 
-\begin{table}[thp]\footnotesize
-\caption{Video sequences used in the experiments, ordered by
-increasing head motion$^\textbf{*}$}\label{Table:1} \centering
-\begin{tabular*}{7.9cm}{@{\extracolsep{\fill}}c@{}c@{}c@{}c}
-\toprule[0.75pt]
-Video  & Number of & Average    & Variance \\
-sequence       & frames    & distance & \ \ position \\
-\midrule[0.5pt]
-1     & 126    & 42.7 (1.6)                           & 8.2                       \\
-2     & 175    & 42.9 (2.2)                           & 11.1                      \\
-3     & 176    & 44.1 (1.8)                           & 11.3                      \\
-4     & 148    & 40.0 (2.8)                           & 27.1                      \\
-5     & 119    & 42.9 (2.8)                           & 37.7                      \\
-6     & 129    & 42.9 (4.4)                           & 120.8                      \\
-7     & 208    & 41.6 (3.1)                           & 164.4                      \\
-\bottomrule[0.75pt] \multicolumn{4}{l}{\scriptsize $^*$ Taken from
-images captured by camera 1}
+\begin{table}[h!]\footnotesize
+\centering
+\caption{Video sequences used in the experiments, ordered by increasing head motion$^\textbf{*}$ \citep{Deniz10}} \label{Table:1}
+\addtolength{\tabcolsep}{4.8pt}
+\begin{tabular*}{7.95cm}{cccc}
+	\toprule[0.75pt]
+	 Video   & Number of &  Average   &                   Variance                   \\
+	sequence &  frames   &  distance  &                   position                   \\ 
+	\midrule[0.5pt]
+	   1     &    126    & 42.7 (1.6) &                     8.2                      \\
+	   2     &    175    & 42.9 (2.2) &                     11.1                     \\
+	   3     &    176    & 44.1 (1.8) &                     11.3                     \\
+	   4     &    148    & 40.0 (2.8) &                     27.1                     \\
+	   5     &    119    & 42.9 (2.8) &                     37.7                     \\
+	   6     &    129    & 42.9 (4.4) &                    120.8                     \\
+	   7     &    208    & 41.6 (3.1) &                    164.4                     \\ 
+	\bottomrule[0.75pt]
+	\multicolumn{4}{p{6cm}}{\scriptsize $^*$ Taken from images captured by camera 1}
 \end{tabular*}
 \end{table}
 
-\subsubsection{Variables and formulae}
 
-Variables, regardless of the context (formula, figure, or table), should be in Italics (e.g., $x_1$); if a variable represents a vector or a matrix, it should be in Italics \& Bold (e.g., $\emph{\textbf{x}}_1$). Numerals and operators should never be italicized unless they are components of a variable.
+\subsubsection{Variables and formulate}
+
+Variables, regardless of the context (formula, figure, or table), should be in Italics (e.g., $x_1$); if a variable represents a vector or a matrix, it should be in Italics \& Bold (e.g., $\bm{x}_1$). Numerals and operators should never be italicized unless they are components of a variable. The following are some typical equations \citep{Theodoridis11}:
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}t} {| \bar{\bm{x}}_{f_i} \cdot {\bm{W}}_{f_i}^l |^2 }= ({{\bm{W}}_{f_i}^l})^\mathrm{T} \dot {\bm{W}}_{f_i}^l \bar {\bm{x}}_{f_i} ({\bar {\bm{x}}_{f_i}})^\mathrm{T},
+\end{equation}
+\begin{equation}\label{indicatorfunc}
+I_{j_1, j_2, \ldots, j_n}^{l_1, l_2, \ldots, l_n} (\bm{x}(t))= 
+	\begin{cases}
+		\alpha(\bm{x}(t)), & \mathrm{if}\ \bm{x}(t) \in \Omega_{j_1, j_2, \ldots, j_n}^{l_1, l_2, \ldots, l_n}, \\
+		0,                 & \mathrm{otherwise},
+	\end{cases}
+\end{equation}
+\begin{equation}\label{eqn:Lyapdisturb1}
+\begin{aligned}
+	\dot{V} & \leq  - \lambda_{\min} ( K ) \| \bm{\xi} \|^2 - \lambda_{\min} ( K ) \| \bm{\zeta} \|^2                       \\
+	        & \quad + \theta_\mathrm{ud} \| \bm{\xi} \| + 4 \rho \| \bm{\xi} \|^2                                           \\
+	        & \leq  - \left[ ( \lambda_{\min} ( K )- 4 \rho ) \| \bm{\xi} \|  -  \theta_\mathrm{ud}  \right] \| \bm{\xi} \| \\
+	        & \quad -\lambda_{\min} ( K ) \left\| \bm{\zeta} \right\|^2                                                     \\
+	        & \leq 0.
+\end{aligned}
+\end{equation}
 
 
-\subsubsection{Theorem and other environments}
+\subsubsection{Theorem, algorithm, and other environments}
 
 \begin{definition}[Definition title here]
 This is an illustration of a definition.
@@ -227,21 +244,50 @@ This is a theorem.
 This is an illustration of Theorem~2.
 \end{theorem}
 
+The following is a sample algorithm: Algorithm~\ref{alg:update-alg} \citep{Xu11}.
+
+\begin{algorithm}\small
+\centering
+\caption{Iterative algorithm for Bayes risk decoding} \label{alg:update-alg}
+\begin{algorithmic}[1]
+	\STATE {$R' \gets \text{MAP-Decode}(\mathcal T)$}
+	\algocomment{One-best to initialize}
+	\STATE {$R' \gets {\text {AddEps}}(R')$}
+	\algocomment{ Add $\epsilon$ word to normalize $R'$}
+	\LOOP	
+            \STATE {do forward algorithm, yielding estimate $\hat E_1$}
+		\FOR{ $k \gets  1 ~\mathrm{to}~ |R'| $ }
+		\STATE{do backward algorithm, obtaining $\gamma(k, w(a))$}
+		\STATE{update to $R$: $r_k \gets {\max}_{w(a)}\gamma_{R'}(k,w(a))$}
+		\ENDFOR
+		\STATE{do line~4~with $R$, obtaining $\hat E_2$}
+		\IF{$\hat E_2 -\hat E_1 =0$}
+			\STATE{break}
+		\ENDIF
+		\STATE{$R' \gets R$}
+		 \STATE{$\hat E_1 \gets \hat E_2$}
+		\STATE {$R' \gets {\text {AddEps}}(R')$}
+	\ENDLOOP
+	\STATE {$R' \gets {\text {RemoveEps}}(R')$}
+	\algocomment{Remove $\epsilon$ word to output}
+\end{algorithmic}
+\end{algorithm}	
+
 \subsubsection{References \& text citation}
 
 The reference list provides complete information of the author-date citation in English and lists in alphabetical order of authors' surnames.
-References with more than 10 authors must list the first 10 authors, followed by \emph{et al}. The references mentioned in the text should accord with the reference list. For a reference published other than in English, the language used should be noted at the end of the reference list, e.g., ``(in Chinese)''. The publisher and place of publication should be given for a book or proceedings. The DOI (refer to http://www.doi.org) should be provided if it is available.
+References with more than 10 authors must list the first 10 authors, followed by {et al}. The references mentioned in the text should accord with the reference list. For a reference published other than in English, the language used should be noted at the end of the reference list, e.g., ``(in Chinese)''. The publisher and place of publication should be given for a book or proceedings. The DOI (refer to http://www.doi.org) should be provided if it is available.
 
-Here are the rules: the command ``$\backslash$citep\{\}'' provides a pair
-around the reference, while ``$\backslash$cite\{\}'' cannot. The
+Here are the rules: the command `$\backslash$citep\{\}' provides a pair
+around the reference, while `$\backslash$cite\{\}' cannot. The
 following are some constantly used citations in our template. When
 you cannot determine the reference type, or the reference type is
-not included in our template, please use the ``misc'' type. Any
+not included in our template, please use the `misc' type. Any
 suggestion on the improvement of the jzus-a.bst is welcome.
 \begin{itemize}
 \itemsep -1pt
 \item For journal articles \citep{Kampf02, TWFS03, Yu10}
-\item For whole books/monographs \citep{Gregersen06} or chapters in edited books \citep{Prigogine76}
+\item For whole books/monographs or chapters in edited books \citep{Prigogine76}
 \item For a proceeding \citep{GQMPSD06}
 \item For a master or PhD dissertation \citep{Rizvi06}
 \item For a report \citep{Sweeney00}
@@ -252,14 +298,11 @@ suggestion on the improvement of the jzus-a.bst is welcome.
 \item For an undetermined reference type \citep{misc10}
 \end{itemize}
 
-\vspace{10.5pt}
 For details, see ``Reference list examples'' at http://www.zju.edu.cn/jzus/revacc.htm\#1
-\\
-\\
 
 \balance
 \bibliographystyle{jzus-a}
-\bibliography{sample}
+\bibliography{bibsample}
 
 %=========================================
 %Authors can choose to use the bibliography or
@@ -268,7 +311,7 @@ For details, see ``Reference list examples'' at http://www.zju.edu.cn/jzus/revac
 
 %\vspace{9pt} {\par
 %\noindent\bf References \par}
-%\begin{description}\small
+%\begin{description}\footnotesize
 %
 %%{description}
 %%\baselineskip 0pt -- line space within an item
@@ -300,6 +343,7 @@ For details, see ``Reference list examples'' at http://www.zju.edu.cn/jzus/revac
 %\vspace{-9pt}
 %
 %\item  Cookson, A.H., 1985. Particle Trap for Compressed Gas Insulated Transmission Systems. US Patent, 4554399.
+%\item  Deniz, O., Castrillon, M., Lorenzo, J., Anton, L., Hernandez, M., Bueno, G., 2010. Computer vision based eyewear selector. {\em J. Zhejiang Univ.-Sci. C (Comput. \& Electron.)}, {\bf11}(2):79--91. [doi:10.1631/jzus.C0910377]
 %\item  Gorini, S., Quirini, M., Menciassi, A., Permorio, G., Stefanini, C., Dario, P., 2006. A Novel SMA-Based Actuator for a Legged Endoscopic Capsule. First IEEE/RAS-EMBS International Conference on Biomedical Robotics and Biomechatronics, p.443--449. [doi:10.1109/BIOROB.2006.1639128]
 %\item  Gregersen, H., 2006. Biomechanics of the Gastrointestinal Tract. People's Medical Publishing House, Beijing, China, p.216--236.
 %\item  ISO 4948-1:1982. Steels-Classification-Part 1: Classification of Steels into Unalloyed and Alloy Steels Based on Chemical Composition. International Organization for Standardization, Geneva.
@@ -309,10 +353,12 @@ For details, see ``Reference list examples'' at http://www.zju.edu.cn/jzus/revac
 %\item  Rizvi, U.H., 2006. Combined Multiple Transmit Antennas and Multi-Level Modulation Techniques. MS Thesis, Royal Institute of Technology, Stockholm, Sweden (in Swedish).
 %\item  Sweeney, L., 2000. Uniqueness of Simple Demographics in the U.S. Population. Technical Report, No.~LIDAP-WP4. Laboratory for International Data Privacy, Carnegie Mellon University, PA.
 %\item  Tanner, N.A., Wait, J.R., Farrar, C.R., Sohn, H., 2003. Structural health monitoring using modular wireless sensors. \emph{J. Intell. Mater. Syst. Struct.}, \textbf{14}(1):43--56. [doi:10.1177/1045389X03014001005]
+%\item  Theodoridis, D., Boutalis, Y., Christodoulou, M., 2011. Direct adaptive regulation of unknown nonlinear systems with analysis of the model order problem. {\em J. Zhejiang Univ.-Sci. C (Comput. \& Electron.)}, {\bf12}(1):1--16. [doi:10.1631/jzus.C1000224]
 %\item  University of Sheffield Library, 2001. Citing Electronic Sources of Information. Available from http://www.shef.ac.uk/library/libdocs/hsldvc1.pdf [Accessed on Feb. 23, 2007].
 %\item  Wu, Z., An, Y., Wang, Z., Yang, S., Chen, H., Zhou, Z., Mai, S., 2008. Study on zoelite enhanced contact adsorption regeneration-stabilization process for nitrogen removal. \emph{J. Hazard. Mater.}, in press. [doi:10.1016/j.jhazmat.2007.12.029]
+%\item  Xu, H.H., Zhu, J., 2011. An iterative approach to bayes risk decoding and system combination. {\em J. Zhejiang Univ.-Sci. C (Comput. \& Electron.)}, {\bf12}(3):204--212. [doi:10.1631/jzus.C1000045]
 %\item  Yu, L., Wang, J.P., 2010. Review of the current and future technologies for video compression. \emph{J. Zhejiang Univ.-Sci. C (Comput. {\sf \slshape \&} Electron.)}, \textbf{11}(1):1--13. [doi:10.1631/jzus.C0910684]
-%
+%\item  Zhou, X.C., SHEN, H.B., YE, J.P., 2011. Integrating outlier filtering in large margin training. {\em J. Zhejiang Univ.-Sci. C (Comput. \& Electron.)}, {\bf12}(5):362--370. [doi:10.1631/jzus.C1000361]
 %
 %\end{description}
 

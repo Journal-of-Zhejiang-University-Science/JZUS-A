@@ -1,1 +1,0 @@
-authblk.sty can be downloaded from the Web.

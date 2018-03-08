@@ -1,7 +1,9 @@
 %
 % Provided courtesy of Dr. Xianliang Hu with Department of Mathematics, Zhejiang University
+%
 % First release on 2010/06/21
 % Modified by Shengke Xue on 2017/06/19
+% Modified on Dec 12, 2017 (XSK)
 
 \ProvidesPackage{jzusa}
 
@@ -10,7 +12,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{latexsym,bm}
-
+\usepackage[english]{babel}
 \usepackage{fancyhdr}
 \usepackage{multirow}
 \usepackage{indentfirst}
@@ -32,6 +34,7 @@
 %\usepackage[hang]{footmisc}
 \usepackage{stfloats}
 \usepackage{upgreek}
+%\usepackage{setspace}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %page setup
 \paperwidth 210mm
@@ -130,20 +133,21 @@
 % default setting on the first page
 \def\ZUS@journal{Journal of Zhejiang University-SCIENCE A (Applied Physics \& Engineering)}
 \def\ZUS@issn{ISSN 1673-565X (Print); ISSN 1862-1775 (Online)}
-\def\ZUS@homepage{www.jzus.zju.edu.cn; www.springerlink.com}
+\def\ZUS@homepage{\href{www.jzus.zju.edu.cn}{www.jzus.zju.edu.cn;}    % URL of the journal
+                  \href{www.springerlink.com}{www.springerlink.com}}  % URL of Springer
 \def\ZUS@email{E-mail: jzus@zju.edu.cn}
 
 % copyright
-\def\ZUS@copyright{Zhejiang University and Springer-Verlag GmbH Germany 2017}
+\def\ZUS@copyright{Zhejiang University and Springer-Verlag GmbH Germany, part of Springer Nature 2018}
 \renewcommand{\footnoterule}{\vspace*{-8pt}\hrule width 1.65in height 0.5pt \vspace*{6pt}}
 
 % default setting on the first page
-\def\ZUS@label@doi{}
+\def\ZUS@label@doi{https://doi.org/}
 %\def\ZUS@label@code{Document code:\ }
 \def\ZUS@label@clc{CLC number:\ }
-\def\ZUS@label@abstract{Abstract:}
+\def\ZUS@label@abstract{Abstract:\ }
 \def\ZUS@label@keywords{Key words:}
-\def\ZUS@value@code{A}
+%\def\ZUS@value@code{A}
 \def\ZUS@value@clc{TU473}
 \let \ZUS@value@doi \relax
 \let \ZUS@value@abstract \relax
@@ -155,12 +159,12 @@
 \newcommand\keywords[1]{\def\ZUS@value@keywords{#1}}
 
 % header
-\def\ZUS@value@shortauthor{author et.al.}
-\def\ZUS@value@year{2011}
-\def\ZUS@value@vol{1}
+\def\ZUS@value@shortauthor{author et al.}
+\def\ZUS@value@year{2018}
+\def\ZUS@value@vol{19}
 \def\ZUS@value@issue{1}
 \def\ZUS@value@pagestart{1}
-\def\ZUS@value@pageend{1}
+\def\ZUS@value@pageend{5}
 \def\ZUS@value@dateinfo{\ }
 \def\ZUS@value@corremail{test@email.edu}
 \newcommand\shortauthor[1]{\def\ZUS@value@shortauthor{#1}}
@@ -210,6 +214,8 @@
 \let \ZUS@value@esm \relax
 \newcommand\esm[1]{\def\ZUS@value@esm{#1}}
 
+\let \ZUS@value@inpress \relax
+\newcommand\inpress{\def\ZUS@value@inpress{1}}  % in press flag
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % format of author info
@@ -276,20 +282,41 @@
   }
 
   % 2. title and author info
-  % \vskip 1ex
-  \renewcommand{\baselinestretch}{1.4}  %  article title spacing
+  
+  \renewcommand{\baselinestretch}{1.4} %  space between author(s) and affiliation(s)
   \begin{center}
   \let \footnote \thanks     % footnote: thanks
   % Review:...
-    \vspace{-16pt} \leftline{\Large \emph{\textbf{\ZUS@value@type}}} \vspace{8pt}
-  % article title
-    {\fontsize{16pt}{16pt}\selectfont \bf \@title}
-    \ifx \ZUS@value@support \relax
-    \
-    \else
-       {\hspace{-3pt}\raisebox{2pt}{\large \footnotemark[1]}}%%% default
-      % {\hspace{-3pt}\raisebox{2pt}{\large{\footnotemark[1]}}\raisebox{2pt}{$\enskip\!^\#$}} %% when it is the extension of a conference paper
-    \fi
+    \vspace{-16pt} 
+    \leftline{\Large \emph{\textbf{\ZUS@value@type}}} 
+    \vspace{8pt}
+
+	% article title
+	{
+		\vspace{2.5pt}
+		\renewcommand{\arraystretch}{1.22}
+		\tabcolsep=0pt
+		\centering
+		\fontsize{16pt}{16pt}\selectfont \bf
+	  \begin{tabular}{C{16.40cm}}
+		\@title
+		\ifx \ZUS@value@support \relax
+		\
+		\else
+		{\raisebox{2pt}{\large \footnotemark[1]}} % default
+		%{\hspace{-3pt}\raisebox{2pt}{\large{\footnotemark[1]}}\raisebox{2pt}{$\enskip\!^\#$}} %% when it is the extension of a conference paper
+		\fi
+	  \end{tabular}
+	  \vspace{-11pt}
+	}
+	% article title
+%  	{ \fontsize{16pt}{16pt}\selectfont \bf \@title }
+%	\ifx \ZUS@value@support \relax
+%	\
+%	\else
+%	{\hspace{-3pt}\raisebox{2pt}{\large \footnotemark[1]}}%%% default
+%	%{\hspace{-3pt}\raisebox{2pt}{\large{\footnotemark[1]}}\raisebox{2pt}{$\enskip\!^\#$}} %% when it is the extension of a conference paper
+%	\fi
     \par
     \renewcommand{\baselinestretch}{1.4} %  space between author(s) and affiliation(s)
     \vspace{20pt}
@@ -302,37 +329,35 @@
          \ifx \ZUS@value@corremailA \relax
           \relax
          \else
-%            \textsuperscript{\ZUS@value@emailmark}E-mail:\   % when all authors provide emails, no $\dagger$
-            \textsuperscript{\ZUS@value@emailmark}\textsuperscript{$\dagger$}E-mail:\   % default
-            \textsuperscript{\ZUS@value@emailmark}\ZUS@value@corremailA
+            \textsuperscript{\ZUS@value@emailmark}E-mail:\   % default
+            \ZUS@value@corremailA
          \fi
       %
          \ifx \ZUS@value@corremailB \relax
           \relax
          \else
-             ; \textsuperscript{\ZUS@value@emailmark}\ZUS@value@corremailB
+             ; \ZUS@value@corremailB
          \fi
       %
          \ifx \ZUS@value@corremailC \relax
           \relax
          \else
-             ; \textsuperscript{\ZUS@value@emailmark}\ZUS@value@corremailC
+             ; \ZUS@value@corremailC
          \fi
       %
          \ifx \ZUS@value@corremailD \relax
           \relax
          \else
-             ; \textsuperscript{\ZUS@value@emailmark}\ZUS@value@corremailD
+             ; \ZUS@value@corremailD
          \fi
          } \\
       \end{tabular}\par
 
       % 3. date, financial disclosure, and copyright
     {\vspace{3pt}\centering \footnotesize \ZUS@value@dateinfo}
-  % When the corresponding author is the first author, and only one email provided, no Dagger.
+  % When the corresponding author is the first author, and only one email provided, the following part (before % financial disclosure ...) should be removed.
     \ifx \ZUS@value@corrauth \relax
-    \setcounter{footnote}{-1}\footnote{\hspace{-19pt}
-     \textsuperscript{$\ddagger$}\ Corresponding author}
+    \
     \else
      \setcounter{footnote}{-1}\footnote{\hspace{-19pt}
      \textsuperscript{$\ddagger$}\ Corresponding author}
@@ -347,14 +372,14 @@
        \scriptsize \textsuperscript{*}\ \ZUS@value@support}
     \fi
 
-   % when it is the extension of a conference paper, the following part should be included
-  %% conference declare
-%    \ifx \ZUS@value@conf \relax
-%    \
-%    \else
-%        \setcounter{footnote}{-1}\footnote{\hspace{-20pt}
-%       \scriptsize \textsuperscript{\#}\ \ZUS@value@conf}
-%    \fi
+    %when it is the extension of a conference paper, the following part should be included
+  % conference declare
+   \ifx \ZUS@value@conf \relax
+    \
+    \else
+        \setcounter{footnote}{-1}\footnote{\hspace{-20pt}
+       \scriptsize \textsuperscript{\#}\ \ZUS@value@conf}
+    \fi
 
    % when it contains electronic supplementary materials
  % % esm declare
@@ -370,48 +395,42 @@
     \
     \else
         \setcounter{footnote}{-1}\footnote{\hspace{-20pt}
-       \scriptsize {\protect\includegraphics[scale=0.38]{orcid16.eps}}\ \ZUS@value@orcid}
-       \fi
+       \scriptsize {\protect\includegraphics[scale=0.40]{orcid16.eps}} ORCID: \ZUS@value@orcid}
+    \fi
 
 
   % copyright
     {\setcounter{footnote}{-1}\footnote{\hspace{-20pt}
-     \textcopyright {\scriptsize \ZUS@copyright}}}
+    \textcopyright \ {\scriptsize \ZUS@copyright}}}
   \end{center}
 
   % 4. Abstract
   \vskip -50pt %before the abstract, 1.4 lines spacing
   \renewcommand{\baselinestretch}{1.1} % abstract, 1.1 lines spacing
-  \noindent{\small \bf \ZUS@label@abstract}\hspace{2mm}
-  {\small \ZUS@value@abstract
+  \noindent{\small \bf \ZUS@label@abstract}{\small \ZUS@value@abstract
   \par}
 
-  % 5. keywords
+  % 5. keywords, doi, and CLC number
   \vskip 10pt
   {
-  \renewcommand{\arraystretch}{0.5}
+  \renewcommand{\arraystretch}{0.9}
   \tabcolsep=0pt
   \noindent
-  \begin{tabular}{@{}L{2cm}L{14.5cm}}
-      {\small \bf \ZUS@label@keywords}
-      &
-      {\small \ZUS@value@keywords} \tabularnewline
-  \end{tabular}
+	\begin{tabular}{@{}L{1.95cm}L{14.4cm}}
+		{\small \bf \ZUS@label@keywords}
+		&
+		{\small \ZUS@value@keywords} \tabularnewline
+	\end{tabular}
+	\begin{tabular}{@{}L{8.45cm}L{5.0cm}}
+		{\small \ZUS@label@doi\ZUS@value@doi}
+		&
+		{\small \bf \ZUS@label@clc}{\small \ZUS@value@clc} \tabularnewline
+	\end{tabular}
   }
- %\vskip -7pt  %  two or more lines of keywords
- \vskip -14pt %  one line of keywords
-  % 6. doi, code number, clc
-  \noindent{\small \ZUS@label@doi}{\hspace{-0.5pt}\small \ZUS@value@doi} \hspace{22mm}
-  %\noindent{\small \bf \ZUS@label@doi}{\hspace{-0.5pt}\small \ZUS@value@doi} \hspace{5mm}
-%  {\small \bf \ZUS@label@code} {\small  \ZUS@value@code} \hspace{8mm}
-  {\small \bf \ZUS@label@clc} {\small \ZUS@value@clc}
 
   \vskip 25pt  % space between doi and article body
 
-
-%\fontsize{10.5pt}{0.9\baselineskip}\selectfont
 }
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % header and footer: journal title and page number -  7pt
@@ -424,10 +443,14 @@
   \fancyhead[LE]{\scriptsize ~\thepage~}% even page (E) number on the left (L)
   \fancyhead[RO]{\scriptsize ~\thepage~}% odd page (O) number on the right (R)
   \fancyhead[CE,CO]{\scriptsize \sf \slshape
-      \ZUS@value@shortauthor\ /\ J Zhejiang Univ-Sci A (Appl Phys \& Eng)
-      \ \ \ZUS@value@year \ \ZUS@value@vol(\ZUS@value@issue):\ZUS@value@pagestart-\ZUS@value@pageend % when volumn, issue, pages are assigned
-    %\ \  in press
-    }\pagestyle{fancy}
+      \ZUS@value@shortauthor\ /\ J Zhejiang Univ-Sci A (Appl Phys \& Eng) \ \
+      \ifx \ZUS@value@inpress \relax
+      	  \ZUS@value@year \ \ZUS@value@vol(\ZUS@value@issue):\ZUS@value@pagestart-\ZUS@value@pageend % when volumn, issue, pages are assigned
+      \else
+	      in press
+	  \fi
+    }
+  \pagestyle{fancy}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
